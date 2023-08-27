@@ -35,10 +35,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAN Show case</title>
-    <link rel="stylesheet" type="text/css" href="C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/static/base_home_page.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/base.css') }}">
 
 </head>
 <body>
-    <h2>This is the base page just testing text</h2>
+<!--
+    Navbar laout
+-->
+    <nav class="navbar">
+        <a class="nav-btns" id="home" href="/">Home</a>
+        <a class="nav-btns" id="Login" href="/login">Login</a>
+        <a class="nav-btns" id="Logout" href="/Logout">Logout</a>
+        <a class="nav-btns" id="profile" href="/profile">Profile</a>
+    </nav>
+
+    <div class="content">
+        {% block content%} {%endblock%}
+    </div>
+
 </body>
 </html>
