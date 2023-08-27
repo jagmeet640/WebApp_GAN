@@ -1,5 +1,48 @@
 {%extends "base.html"%}
 {%block content%}
     <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='./css/home.css')}}">
-    
+    <div class="home-body">
+        <div class="card-container">
+            <div class="card">
+                <div class="gan-access">
+                    <h2>DCGAN</h2>
+                    <form method="POST">
+                        <label for="numberInput">Please enter a number: </label>
+                        <input type="number" id="numberInput" name="BatchSize" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="gan-access">
+                    <h2>LSGAN</h2>
+                    <form method="POST">
+                        <label for="numberInput">Please enter a number: </label>
+                        <input type="number" id="numberInput" name="BatchSize" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="gan-access">
+                    <h2>WGAN-GP</h2>
+                    <form method="POST">
+                        <label for="numberInput">Please enter a number: </label>
+                        <input type="number" id="numberInput" name="BatchSize" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="gan-access">
+                    <h2>BiGAN</h2>
+                    <form method="POST">
+                        <label for="numberInput">Please enter a number: </label>
+                        <input type="number" id="numberInput" name="BatchSize" required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {%endblock%}

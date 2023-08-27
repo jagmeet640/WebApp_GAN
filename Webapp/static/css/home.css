@@ -1,0 +1,42 @@
+home-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+  }
+  
+  .card-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 3fr); /* This sets the grid to have 2 equal-width columns */
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 15px; /* Adds spacing between cards */
+  }
+  
+  .card {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 10px;
+    height: 300px;
+    width: 95%; /* Cards will take up the full width of each column */
+    box-shadow: 0px 2px 4px rgba(163, 130, 238, 0.719);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(135, 9, 238, 0.61);
+  }
+  
+.gan-access{
+    font-size: large;
+}
