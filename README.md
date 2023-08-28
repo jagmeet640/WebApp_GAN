@@ -1,5 +1,7 @@
 # WebApp_GAN
-Creating a web app using Html, css and jinja2 for front end. Using Flask for back end and access saved GAN model.
+Developing a full stack application using Html, css and jinja2 for front end. 
+Using Flask for back end and access saved GAN model.
+The GAN models were developed during dissertation
 
 ## Step 1 
 Developing a neat User intgerface using html css, and using jinja for writing html templates and frontend logic
