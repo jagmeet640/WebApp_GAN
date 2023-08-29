@@ -1,9 +1,26 @@
 {%extends "base.html"%}
 {%block content%}
     {%if flag == True%}
-        <h2>Model has loaded sucessfully in views</h2>
-        <h3>{{BatchSize}}</h3>
-        <h4>{{generated_images}}</h4>
+        <div class="gen-img-container">
+            <div class="gen-img-title">
+                <h2>Generated samples :1</h2>
+            </div>
+            <div class="get-imgs">
+                <h2>
+                    Display generated images here
+                </h2>
+            </div>
+            <div class="real-imgs">
+                <h2>
+                    Display real images for comparisons 
+                </h2>
+            </div>
+            <div class="user-thought">
+                <h2>
+                    User Input reviews about their thoughts on the generated images
+                </h2>
+            </div>
+        </div>
     {%else%}
         <h2>Model has loading failed in views</h2>
     {%endif%}
