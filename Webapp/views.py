@@ -3,8 +3,11 @@ from jinja2 import Environment, FileSystemLoader
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
+import matplotlib.pyplot as plt
+import numpy as np
 
-template_env = Environment(loader=FileSystemLoader('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/template'))
+template_env = Environment(loader=FileSystemLoader('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/template'))
+# template_env = Environment(loader=FileSystemLoader('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/template'))
 home_template = template_env.get_template('home.html')
 gan_template = template_env.get_template('gan.html')
 
@@ -21,10 +24,18 @@ def home():
 @views.route('/gan', methods=['GET'])
 def gan():
     BatchSize = int(request.args.get('BatchSize'))  # Parse BatchSize as integer
-    gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
+    # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
+    gan_model = load_model('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_mildew_cherry_BiGAN.h5')
     random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
     generated_images = gan_model.predict(random_latent_vector)
     generated_images = generated_images * 255.0
+    for i in range(len(generated_images)):
+        img = keras.preprocessing.image.array_to_img(generated_images[i])
+        img.save(f'C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_{i}.png')  # Save the image
+
+    # Display and save the generated images
+    # for i, image in enumerate(generated_images):
+    #     plt.savefig(f'C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_{i}.png')  # Save the image
 
     if gan_model is not None: 
        flag = True
