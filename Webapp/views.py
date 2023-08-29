@@ -20,11 +20,10 @@ def home():
 
 @views.route('/gan', methods=['GET'])
 def gan():
-    BatchSize = request.args.get('BatchSize')
-    # print("batch size from /gan :", BatchSize)
+    BatchSize = int(request.args.get('BatchSize'))  # Parse BatchSize as integer
     gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
     random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
-    generated_images = model.generator.predict(random_latent_vector)
+    generated_images = gan_model.predict(random_latent_vector)
     generated_images = generated_images * 255.0
 
     if gan_model is not None: 
