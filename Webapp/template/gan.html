@@ -6,12 +6,12 @@
                 <h2>Generated samples :</h2>
             </div>
             <div class="get-imgs">
-                <img src="{{ url_for('static', filename='generated_imgs/generated_image_0.png') }}" alt="Image">
+                <!-- <img src="{{ url_for('static', filename='generated_imgs/generated_image_0.png') }}" alt="Image"> -->
                 <!-- <img src="C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_0.png" alt="error"> -->
-                <!-- {% for image_file in image_files %}
+                {% for image_file in image_files %}
                     <h3>{{image_file}}</h3>
-                    <img src="{{ url_for('static', filename='C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/' ~ image_file) }}" alt="Image">
-                {% endfor %} -->
+                    <img src="{{ url_for('static', filename='generated_imgs/' ~ image_file) }}" alt="Image">
+                {% endfor %}
             </div>
             
             <div class="real-imgs">

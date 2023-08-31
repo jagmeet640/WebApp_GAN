@@ -42,8 +42,8 @@ def gan():
     else:
         flag = False
 
-    # image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs')
-    return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images)
+    image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
+    return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images, image_files=image_files)
 
 
 
