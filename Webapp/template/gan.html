@@ -3,13 +3,17 @@
     {%if flag == True%}
         <div class="gen-img-container">
             <div class="gen-img-title">
-                <h2>Generated samples :1</h2>
+                <h2>Generated samples :</h2>
             </div>
             <div class="get-imgs">
-                <h2>
-                    Display generated images here
-                </h2>
+                <img src="{{ url_for('static', filename='generated_imgs/generated_image_0.png') }}" alt="Image">
+                <!-- <img src="C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_0.png" alt="error"> -->
+                <!-- {% for image_file in image_files %}
+                    <h3>{{image_file}}</h3>
+                    <img src="{{ url_for('static', filename='C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/' ~ image_file) }}" alt="Image">
+                {% endfor %} -->
             </div>
+            
             <div class="real-imgs">
                 <h2>
                     Display real images for comparisons 
