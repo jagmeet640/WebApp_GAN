@@ -25,7 +25,7 @@ class GI(db.Model):
     #     # Deserialize the binary data back into a 3D NumPy array
     #     return np.frombuffer(self.ImageData, dtype=np.uint8).reshape((self.width, self.height, self.channels))
 
-class user(db.Model, UserMixin):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key= True)
     email = db.Column(db.String(10000))
     password = db.Column(db.String(128))
