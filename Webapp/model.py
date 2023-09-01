@@ -27,7 +27,7 @@ class GI(db.Model):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key= True)
-    email = db.Column(db.String(10000))
+    email = db.Column(db.String(10000), unique=True)
     password = db.Column(db.String(128))
     FirstName = db.Column(db.String(128))
-    GeneratedImg = db.relationship('GI')
+    GeneratedImg = db.relationship('GI',  primaryjoin="User.id == GI.id")

@@ -37,7 +37,7 @@ def logout():
     # backend function for logout
     pass
 
-@auth.route('/signup')
+@auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     # backend function for sign up
     if request.method == 'POST':
