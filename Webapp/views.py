@@ -19,9 +19,11 @@ def home():
     if request.method == 'POST':
         BatchSize = request.form.get('BatchSize')
         selected_gan = request.form['GanType']
+        selected_plant = request.form['plant']
         print('selected gan ', selected_gan)
         print("Batch size entered",BatchSize)
-        return redirect(url_for('views.gan', BatchSize= BatchSize, selected_gan=selected_gan))
+        print("selected plant", selected_plant)
+        return redirect(url_for('views.gan', BatchSize= BatchSize, selected_gan=selected_gan, selected_plant=selected_plant))
     return render_template(home_template, url_for=url_for)
 
 @views.route('/gan', methods=['GET'])
@@ -29,6 +31,7 @@ def gan():
 
     BatchSize = int(request.args.get('BatchSize'))  # Parse BatchSize as integer
     selected_gan = request.args.get('selected_gan') # get selected gan option
+    selected_plant = request.args.get('selected_plant') # get the selected plant
 
     if selected_gan == 'DCGAN':
         gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_DCGAN.h5')
@@ -48,7 +51,7 @@ def gan():
     # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
     # # gan_model = load_model('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_mildew_cherry_BiGAN.h5')
 
-    # random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
+
     generated_images = gan_model.predict(random_latent_vector)
     generated_images = generated_images * 255.0
     for i in range(len(generated_images)):
