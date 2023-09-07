@@ -7,36 +7,12 @@
                 <div class="gan-access">
                     <h2>DCGAN</h2>
                     <form method="POST">
-                        <label for="numberInput">Please enter a number: </label>
-                        <input type="number" id="numberInput" name="BatchSize" required>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="card">
-                <div class="gan-access">
-                    <h2>LSGAN</h2>
-                    <form method="POST">
-                        <label for="numberInput">Please enter a number: </label>
-                        <input type="number" id="numberInput" name="BatchSize" required>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="card">
-                <div class="gan-access">
-                    <h2>WGAN-GP</h2>
-                    <form method="POST">
-                        <label for="numberInput">Please enter a number: </label>
-                        <input type="number" id="numberInput" name="BatchSize" required>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div class="card">
-                <div class="gan-access">
-                    <h2>BiGAN</h2>
-                    <form method="POST">
+                        <select id="gan-type" name="GanType">
+                            <option name="GanType" value="DCGAN">DCGAN</option>
+                            <option name="GanType" value="LSGAN">LSGAN</option>
+                            <option name="GanType" value="WGAN">WGAN</option>
+                            <option name="GanType" value="BIGAN">BIGAN</option>
+                        </select>
                         <label for="numberInput">Please enter a number: </label>
                         <input type="number" id="numberInput" name="BatchSize" required>
                         <button type="submit">Submit</button>

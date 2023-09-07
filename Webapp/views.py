@@ -24,26 +24,33 @@ def home():
 
 @views.route('/gan', methods=['GET'])
 def gan():
+
     BatchSize = int(request.args.get('BatchSize'))  # Parse BatchSize as integer
-    gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
-    # gan_model = load_model('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_mildew_cherry_BiGAN.h5')
-    random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
-    generated_images = gan_model.predict(random_latent_vector)
-    generated_images = generated_images * 255.0
-    for i in range(len(generated_images)):
-        img = keras.preprocessing.image.array_to_img(generated_images[i])
-        # C:\Users\jagmeet.singh\Documents\GitHub\WebApp_GAN\Webapp\static\generated_imgs
-        img.save(f'C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs/generated_image_{i}.png')  # Save the image
-        # img.save(f'C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_{i}.png')  # Save the image
+    selected_gan = request.form['GanType']
+
+    # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
+    # # gan_model = load_model('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_mildew_cherry_BiGAN.h5')
+    # random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
+    # generated_images = gan_model.predict(random_latent_vector)
+    # generated_images = generated_images * 255.0
+    # for i in range(len(generated_images)):
+    #     img = keras.preprocessing.image.array_to_img(generated_images[i])
+    #     # C:\Users\jagmeet.singh\Documents\GitHub\WebApp_GAN\Webapp\static\generated_imgs   
+    #     img.save(f'C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs/generated_image_{i}.png')  # Save the image
+    #     # img.save(f'C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_{i}.png')  # Save the image
 
    
-    if gan_model is not None: 
-       flag = True
-    else:
-        flag = False
+    # if gan_model is not None: 
+    #    flag = True
+    # else:
+    #     flag = False
 
-    image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
-    return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images, image_files=image_files)
+    # image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
+    # return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images, image_files=image_files)
+
+    print(selected_gan)
+    print(BatchSize)
+    return "<h1>worked</h1>"
 
 
 
