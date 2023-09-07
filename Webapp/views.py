@@ -32,19 +32,23 @@ def gan():
 
     if selected_gan == 'DCGAN':
         gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_DCGAN.h5')
+        random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'LSGAN':
         gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_LSGAN.h5')
+        random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_model == 'WGAN':
         gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_WGAN.h5')
+        random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_model == 'BIGAN' :
         gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
+        random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
     else:
         print("error! Gan type not valid")
 
     # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
     # # gan_model = load_model('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_mildew_cherry_BiGAN.h5')
 
-    random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
+    # random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
     generated_images = gan_model.predict(random_latent_vector)
     generated_images = generated_images * 255.0
     for i in range(len(generated_images)):
