@@ -18,15 +18,17 @@ views = Blueprint('views', __name__)
 def home():
     if request.method == 'POST':
         BatchSize = request.form.get('BatchSize')
+        selected_gan = request.form['GanType']
+        print('selected gan ', selected_gan)
         print("Batch size entered",BatchSize)
-        return redirect(url_for('views.gan', BatchSize= BatchSize))
+        return redirect(url_for('views.gan', BatchSize= BatchSize, selected_gan=selected_gan))
     return render_template(home_template, url_for=url_for)
 
 @views.route('/gan', methods=['GET'])
 def gan():
 
     BatchSize = int(request.args.get('BatchSize'))  # Parse BatchSize as integer
-    selected_gan = request.form['GanType']
+    selected_gan = request.args.get('selected_gan')
 
     # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
     # # gan_model = load_model('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_mildew_cherry_BiGAN.h5')
