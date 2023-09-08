@@ -11,6 +11,7 @@ auth = Blueprint('auth', __name__)
 template_env = Environment(loader=FileSystemLoader('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/template'))
 login_template = template_env.get_template("login.html")
 signup_template = template_env.get_template("signup.html")
+home_template = template_env.get_template("home.html")
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -25,10 +26,9 @@ def login():
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
         else: 
-            print("incorrect password")
-    else:
-        print("email does not exsist")
-        redirect(url_for('auth.signup'))
+            # print("incorrect password")
+            print("email does not exsist")
+            return render_template(signup_template, url_for=url_for)       
 
     return render_template(login_template, url_for=url_for)
 
