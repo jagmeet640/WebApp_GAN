@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, url_for, render_template, request
+from flask import Flask, Blueprint, url_for, render_template, request, redirect
 from jinja2 import Environment, FileSystemLoader
 from .model import User
 from werkzeug.security import generate_password_hash, check_password_hash
