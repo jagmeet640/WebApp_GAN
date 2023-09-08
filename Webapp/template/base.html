@@ -43,11 +43,14 @@
     Navbar laout
 -->
     <nav class="navbar">
+        {% if user.is_authenticated%}
         <a class="nav-btns" id="home" href="/">Home</a>
-        <a class="nav-btns" id="Login" href="/login">Login</a>
-        <a class="nav-btns" id="Login" href="/signup">Sign up</a>
         <a class="nav-btns" id="Logout" href="/Logout">Logout</a>
         <a class="nav-btns" id="profile" href="/profile">Profile</a>
+        {%else%}
+        <a class="nav-btns" id="Login" href="/login">Login</a>
+        <a class="nav-btns" id="Login" href="/signup">Sign up</a>
+        {%endif%}        
     </nav>
 
     <div class="content">

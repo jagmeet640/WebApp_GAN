@@ -28,9 +28,9 @@ def login():
         else: 
             # print("incorrect password")
             print("email does not exsist")
-            return render_template(signup_template, url_for=url_for)       
+            return render_template(signup_template, url_for=url_for, user=current_user)       
 
-    return render_template(login_template, url_for=url_for)
+    return render_template(login_template, url_for=url_for, user=current_user)
 
 @auth.route('/logout')
 def logout():
@@ -63,4 +63,4 @@ def signup():
             login_user(new_user, remember=True)
             print("account created")
             return redirect(url_for('views.home'))
-    return render_template(signup_template, url_for=url_for)
+    return render_template(signup_template, url_for=url_for, user=current_user)

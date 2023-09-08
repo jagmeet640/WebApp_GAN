@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, url_for, request, redirect
 from jinja2 import Environment, FileSystemLoader
+from flask_login import login_required, current_user
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
@@ -24,7 +25,7 @@ def home():
         print("Batch size entered",BatchSize)
         print("selected plant", selected_plant)
         return redirect(url_for('views.gan', BatchSize= BatchSize, selected_gan=selected_gan, selected_plant=selected_plant))
-    return render_template(home_template, url_for=url_for)
+    return render_template(home_template, url_for=url_for, user=current_user)
 
 @views.route('/gan', methods=['GET'])
 def gan():
@@ -71,7 +72,7 @@ def gan():
         flag = False
 
     image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
-    return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images, image_files=image_files)
+    return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images, image_files=image_files, user=current_user)
 
     # print(selected_gan)
     # print(BatchSize)
