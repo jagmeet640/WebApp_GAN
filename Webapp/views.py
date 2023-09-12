@@ -35,7 +35,7 @@ def gan():
     BatchSize = int(request.args.get('BatchSize'))  # Parse BatchSize as integer
     selected_gan = request.args.get('selected_gan') # get selected gan option
     selected_plant = request.args.get('selected_plant') # get the selected plant
-
+    selected_class = request.args.get('selected_class') # get the selected class
     if selected_gan == 'DCGAN':
         # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_DCGAN.h5')
         gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/' + selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
