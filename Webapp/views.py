@@ -21,10 +21,12 @@ def home():
         BatchSize = request.form.get('BatchSize')
         selected_gan = request.form['GanType']
         selected_plant = request.form['plant']
+        selected_class = request.form['classType']
+
         print('selected gan ', selected_gan)
         print("Batch size entered",BatchSize)
         print("selected plant", selected_plant)
-        return redirect(url_for('views.gan', BatchSize= BatchSize, selected_gan=selected_gan, selected_plant=selected_plant))
+        return redirect(url_for('views.gan', BatchSize= BatchSize, selected_gan=selected_gan, selected_plant=selected_plant, selected_class=selected_class))
     return render_template(home_template, url_for=url_for, user=current_user)
 
 @views.route('/gan', methods=['GET'])
@@ -36,19 +38,19 @@ def gan():
 
     if selected_gan == 'DCGAN':
         # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_DCGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/Healthy_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/' + selected_class + '/' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'LSGAN':
         # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_LSGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/Healthy_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/'+ selected_class + '/' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'WGAN':
         # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_WGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/Healthy_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/'+ selected_class + '/' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'BIGAN' :
         # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/Healthy_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/'+ selected_class + '/' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
     else:
         print("error! Gan type not valid")
