@@ -10,16 +10,6 @@ home-body {
     
   }
   
-  .card-container {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 3fr); /* This sets the grid to have 2 equal-width columns */
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    gap: 15px; /* Adds spacing between cards */
-  }
   
   .card {
     display: flex;
