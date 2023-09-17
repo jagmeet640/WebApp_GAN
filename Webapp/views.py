@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-# template_env = Environment(loader=FileSystemLoader('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/template'))
-template_env = Environment(loader=FileSystemLoader('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/template'))
+template_env = Environment(loader=FileSystemLoader('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/template'))
+# template_env = Environment(loader=FileSystemLoader('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/template'))
 home_template = template_env.get_template('home.html')
 gan_template = template_env.get_template('gan.html')
 
@@ -37,20 +37,20 @@ def gan():
     selected_plant = request.args.get('selected_plant') # get the selected plant
     selected_class = request.args.get('selected_class') # get the selected class
     if selected_gan == 'DCGAN':
-        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_DCGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/' + selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_DCGAN.h5')
+        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/' + selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'LSGAN':
-        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_LSGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/'+ selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_LSGAN.h5')
+        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/'+ selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'WGAN':
-        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_WGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/'+ selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_WGAN.h5')
+        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/'+ selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 128))
     elif selected_gan == 'BIGAN' :
-        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
-        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/'+ selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
+        gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/cherry/generator_healthy_cherry_BiGAN.h5')
+        # gan_model = load_model('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/GAN_saved_models/'+ selected_plant + '/'+ selected_class + '_' + selected_plant + '_' + selected_gan + '.h5')
         random_latent_vector = tf.random.normal(shape=(BatchSize, 100))
     else:
         print("error! Gan type not valid")
@@ -64,8 +64,8 @@ def gan():
     for i in range(len(generated_images)):
         img = keras.preprocessing.image.array_to_img(generated_images[i])
         # C:\Users\jagmeet.singh\Documents\GitHub\WebApp_GAN\Webapp\static\generated_imgs   
-        img.save(f'C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs/generated_image_{i}.png')  # Save the image
-        # img.save(f'C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_{i}.png')  # Save the image
+        # img.save(f'C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs/generated_image_{i}.png')  # Save the image
+        img.save(f'C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/generated_imgs/generated_image_{i}.png')  # Save the image
 
    
     if gan_model is not None: 
@@ -73,7 +73,8 @@ def gan():
     else:
         flag = False
 
-    image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
+    # image_files = os.listdir('C:/Users/jagmeet.singh/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
+    image_files = os.listdir('C:/Users/jagme/Documents/GitHub/WebApp_GAN/Webapp/static/generated_imgs')
     return render_template(gan_template, url_for=url_for, flag=flag, gan_model=gan_model, BatchSize=BatchSize, generated_images=generated_images, image_files=image_files, user=current_user)
 
     # print(selected_gan)
