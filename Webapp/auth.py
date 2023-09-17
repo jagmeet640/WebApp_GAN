@@ -14,6 +14,7 @@ login_template = template_env.get_template("login.html")
 signup_template = template_env.get_template("signup.html")
 home_template = template_env.get_template("home.html")
 
+
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     # backend function for login
