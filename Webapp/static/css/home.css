@@ -42,37 +42,61 @@ home-body {
 }
 
 .Gan-DropDown{
-  background-color: blue;
+  background-color: rgb(8, 110, 245);
   padding: 10px;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
 }
 
 .Plant-DropDown{
-  background-color: blue;
+  background-color: rgb(8, 110, 245);
   padding: 10px;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
 }
 
 .Class-DropDown{
-  background-color: blue;
+  background-color: rgb(8, 110, 245);
   padding: 10px;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
 }
 
 .Input-Batch{
-  background-color: blue;
+  background-color: rgb(8, 110, 245);
   padding: 10px;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
 }
 
 .Num-Selector{
-  background-color: blue;
+  background-color: rgb(8, 110, 245);
   padding: 10px;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
 }
 
 .Submit-Button{
-  background-color: blue;
+  background-color: rgb(8, 110, 245);
   padding: 10px;
-  font-size: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 5px;
 }
