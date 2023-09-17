@@ -11,11 +11,13 @@ home-body {
   
   .card {
     display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #ffffff;
     border-radius: 4px;
-    padding: 10px;
+    padding: 20px;
     height: 300px;
-    width: 95%; /* Cards will take up the full width of each column */
+    margin-top: 10px;
     box-shadow: 0px 2px 4px rgba(163, 130, 238, 0.719);
     transition: transform 0.2s, box-shadow 0.2s;
   }
