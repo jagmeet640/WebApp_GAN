@@ -2,34 +2,36 @@
 {%block content%}
     <link rel="stylesheet"  type="text/css" href="{{url_for('static', filename='./css/home.css')}}">
     <div class="home-body">
-        <form method="POST">
-            <select id="gan-type" name="GanType">
-                <option name="GanType" value="DCGAN">DCGAN</option>
-                <option name="GanType" value="LSGAN">LSGAN</option>
-                <option name="GanType" value="WGAN">WGAN</option>
-                <option name="GanType" value="BIGAN">BIGAN</option>
-            </select>
-            
-            <select id="plant" name="plant">
-                <option name="plant" value="Cherry">Cherry</option>
-                <option name="plant" value="Pepper">Pepper</option>
-                <option name="plant" value="Potato">Potato</option>
-                <option name="plant" value="Strawberry">Strawberry</option>
-                <option name="plant" value="Tomato">Tomato</option>
-            </select>
-
-            <select id="class-type" name="classType">
-                <option name="classType" value="Healthy">Healthy</option>
-                <option name="classType" value="Mildew">Cherry Mildew</option>
-                <option name="classType" value="Bacterial">Pepper Bacterial</option>
-                <option name="classType" value="LightBlight">Potato LightBlight</option>
-                <option name="classType" value="LeafScorch">Strawberry leafscorch</option>
-            </select>
-            
-            <label for="numberInput">Please enter a number: </label>
-            <input type="number" id="numberInput" name="BatchSize" required>
-            <button type="submit">Submit</button>
-            
-        </form>
+        <div class="card">
+            <form method="POST">
+                <select id="gan-type" name="GanType">
+                    <option name="GanType" value="DCGAN">DCGAN</option>
+                    <option name="GanType" value="LSGAN">LSGAN</option>
+                    <option name="GanType" value="WGAN">WGAN</option>
+                    <option name="GanType" value="BIGAN">BIGAN</option>
+                </select>
+                
+                <select id="plant" name="plant">
+                    <option name="plant" value="Cherry">Cherry</option>
+                    <option name="plant" value="Pepper">Pepper</option>
+                    <option name="plant" value="Potato">Potato</option>
+                    <option name="plant" value="Strawberry">Strawberry</option>
+                    <option name="plant" value="Tomato">Tomato</option>
+                </select>
+    
+                <select id="class-type" name="classType">
+                    <option name="classType" value="Healthy">Healthy</option>
+                    <option name="classType" value="Mildew">Cherry Mildew</option>
+                    <option name="classType" value="Bacterial">Pepper Bacterial</option>
+                    <option name="classType" value="LightBlight">Potato LightBlight</option>
+                    <option name="classType" value="LeafScorch">Strawberry leafscorch</option>
+                </select>
+                
+                <label for="numberInput">Please enter a number: </label>
+                <input type="number" id="numberInput" name="BatchSize" required>
+                <button type="submit">Submit</button>
+                
+            </form>
+        </div>
     </div>
 {%endblock%}
