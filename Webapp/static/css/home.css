@@ -49,6 +49,7 @@ home-body {
   border-radius: 3px;
   border: none;
   margin-right: 5px;
+  border: white 2px solid;
 }
 
 .Plant-DropDown{
@@ -59,6 +60,7 @@ home-body {
   border-radius: 3px;
   border: none;
   margin-right: 5px;
+  border: white 2px solid;
 }
 
 .Class-DropDown{
@@ -69,6 +71,7 @@ home-body {
   border-radius: 3px;
   border: none;
   margin-right: 5px;
+  border: white 2px solid;
 }
 
 .Input-Batch{
@@ -79,6 +82,7 @@ home-body {
   border-radius: 3px;
   border: none;
   margin-right: 5px;
+  border: white 2px solid;
 }
 
 .Num-Selector{
@@ -89,6 +93,7 @@ home-body {
   border-radius: 3px;
   border: none;
   margin-right: 5px;
+  border: white 2px solid;
 }
 
 .Submit-Button{
@@ -99,4 +104,5 @@ home-body {
   border-radius: 3px;
   border: none;
   margin-right: 5px;
+  border: white 2px solid;
 }
