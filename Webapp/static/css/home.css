@@ -40,3 +40,39 @@ home-body {
 .gan-access{
     font-size: large;
 }
+
+.Gan-DropDown{
+  background-color: blue;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.Plant-DropDown{
+  background-color: blue;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.Class-DropDown{
+  background-color: blue;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.Input-Batch{
+  background-color: blue;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.Num-Selector{
+  background-color: blue;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.Submit-Button{
+  background-color: blue;
+  padding: 10px;
+  font-size: 10px;
+}
