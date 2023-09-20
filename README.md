@@ -13,16 +13,16 @@ Importing all saved GAN models used in dissertaion (WGAN-GP, DCGAN, LSGAN, BiGAN
 - imported all the models from dissertation code evidence submission folder into the working directory 
 
 ## Step 3
-Developing backend logic using flask for creating Database using Sqlachemy-Flask API
+Developing backend logic using flask for creating Database using Sqlachemy-Flask API (Done)
 
 ## Step 4 
-Developing backend logic for registering, login and logging out a user
+Developing backend logic for registering, login and logging out a user (Done)
 
 ## Step 5 
-Developing backend logic for recording the user input and interactions 
+Developing backend logic for recording the user input and interactions (Done)
 
 ## Step 6
-Developing backend logic for displaing the GAN predicted image 
+Developing backend logic for displaing the GAN predicted image (Done)
 
 ## Step 7
 Developing backend logic for recoding the user history in database 
