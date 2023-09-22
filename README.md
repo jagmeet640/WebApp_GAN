@@ -26,6 +26,7 @@ Developing backend logic for displaing the GAN predicted image (Done)
 
 ## Step 7
 Developing backend logic for recoding the user history in database 
+working on incorperating image saving
 
 ## Step 8 
 Developing a UI element/method allowing the user to access the history 
